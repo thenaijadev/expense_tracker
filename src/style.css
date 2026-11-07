@@ -1,0 +1,46 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  margin: 0;
+  padding: 24px;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+input, select, button {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  margin: 8px 0;
+  background: white;
+  border-radius: 6px;
+}
+
+.chart-container {
+  max-width: 400px;
+  margin: 24px auto;
+}

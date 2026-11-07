@@ -28,7 +28,7 @@ Install Node.js 22.12.0 or a newer compatible version, together with npm.
 Clone this repository and enter its directory:
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/thenaijadev/expense_tracker.git
 cd expense-tracker
 ```
 

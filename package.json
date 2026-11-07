@@ -1,0 +1,23 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "vite": "^8.3.6"
+  },
+  "dependencies": {
+    "chart.js": "^4.6.1",
+    "date-fns": "^4.4.0"
+  },
+  "description": "A JavaScript expense tracking application",
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
