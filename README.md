@@ -4,59 +4,55 @@ A personal expense tracking application built with JavaScript, npm, and Vite.
 
 ## Features
 
-- Add and delete expenses
-- Categorize expenses
+- Add, categorize, and delete expenses
 - Calculate total spending
-- Visualize spending by category with Chart.js
-- Save expenses locally in the browser
-- Format transaction dates with date-fns
+- Visualize expenses using Chart.js
+- Store expenses locally in the browser
+- Format dates using date-fns
 
-## Technology
+## Technologies
 
-- JavaScript (ES modules)
+- JavaScript
 - Node.js and npm
-- Vite for development and production bundling
-- Chart.js for visualization
-- date-fns for date formatting
+- Vite
+- Chart.js
+- date-fns
 
 ## Prerequisites
 
-Install Node.js 22.12.0 or a newer compatible version, together with npm.
+Node.js 22.12.0 or a newer compatible version and npm.
 
 ## Installation
 
-Clone this repository and enter its directory:
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/thenaijadev/expense_tracker.git
-cd expense-tracker
-```
-
-Install the exact locked dependencies:
-
-```bash
+cd expense_tracker
 npm ci
 ```
 
-## Development
+## Build, Test, and Run
 
-Start the development server:
+Start the application locally:
 
 ```bash
 npm run dev
 ```
 
-Open the local URL shown in the terminal.
+Run automated tests:
 
-## Build and Packaging
+```bash
+npm test
+```
 
-Generate an optimized production bundle:
+Generate the production build:
 
 ```bash
 npm run build
 ```
 
-The generated files are located in `dist/`. This directory contains the production website, including its bundled JavaScript and CSS assets.
+The production files are generated in the `dist/` directory.
 
 Preview the production build:
 
@@ -64,46 +60,39 @@ Preview the production build:
 npm run preview
 ```
 
-## Testing
+## Build Automation
 
-Run the automated tests:
+The project uses **npm** and **Vite** to automate:
 
-```bash
-npm test
-```
-
-## Version Management
-
-The project version is declared in `package.json`.
-
-To inspect the current version:
-
-```bash
-npm pkg get version
-```
-
-To increment the patch version:
-
-```bash
-npm version patch
-```
+- **Dependency management:** npm installs external libraries declared in `package.json`.
+- **Compilation/build processing:** Vite transforms and bundles JavaScript and CSS.
+- **Version management:** The project version is managed in `package.json`.
+- **Packaging:** Vite generates an optimized, deployable website in `dist/`.
 
 ## Build Configuration
 
-- `package.json`: project metadata, scripts, and dependency declarations.
-- `package-lock.json`: resolved dependency versions and integrity information.
-- `vite.config.js`: Vite build configuration.
-- `src/`: application source code.
-- `tests/`: automated tests.
+- `package.json`: Project metadata, version, dependencies, and build scripts.
+- `package-lock.json`: Exact resolved dependency versions.
+- `vite.config.js`: Production build configuration.
 
 ## Reproducibility
 
-The project uses a committed lockfile so that dependencies can be restored using `npm ci`. Generated directories such as `node_modules/` and `dist/` are not committed.
+The project uses a committed `package-lock.json` to support reproducible dependency installation.
 
-## Application Data
+The build was verified from a fresh GitHub clone using:
 
-Expenses are stored in the browser's local storage. No external database or server is required to run the application.
+```bash
+npm ci
+npm test
+npm run build
+```
+
+All 3 tests passed, and the production build completed successfully.
 
 ## Version
 
-1.0.0 — Initial release.# expense_tracker
+**1.0.1**
+
+## Repository
+
+https://github.com/thenaijadev/expense_tracker
