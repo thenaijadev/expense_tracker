@@ -1,44 +1,18 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expense Tracker</title>
-</head>
-<body>
-  <main>
-    <h1>Expense Tracker</h1>
-    <p>Manage and visualize your personal expenses.</p>
-
-    <form id="expense-form">
-      <input name="description" placeholder="Description" required>
-
-      <input name="amount" type="number"
-             min="0.01" step="0.01" placeholder="Amount" required>
-
-      <select name="category" required>
-        <option value="Food">Food</option>
-        <option value="Transport">Transport</option>
-        <option value="Shopping">Shopping</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <input name="date" type="date" required>
-      <button type="submit">Add Expense</button>
-    </form>
-
-    <h2>Total spent: <span id="total">0.00</span></h2>
-
-    <h2>Expenses</h2>
-    <ul id="expense-list"></ul>
-
-    <h2>Spending by category</h2>
-    <div class="chart-container">
-      <canvas id="category-chart"></canvas>
-    </div>
-  </main>
-
-  <script type="module" src="/src/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#183e2f" />
+    <meta name="description" content="Track expenses, income, and monthly budgets with Penny, your private personal expense tracker." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Penny — Expense tracker</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <div id="app"></div>
+    <div id="dialog-root"></div>
+    <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

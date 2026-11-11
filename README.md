@@ -1,98 +1,44 @@
 # Expense Tracker
 
-A personal expense tracking application built with JavaScript, npm, and Vite.
+A responsive personal finance app built with JavaScript, Vite, Chart.js, and date-fns.
 
-## Features
+## Run locally
 
-- Add, categorize, and delete expenses
-- Calculate total spending
-- Visualize expenses using Chart.js
-- Store expenses locally in the browser
-- Format dates using date-fns
-
-## Technologies
-
-- JavaScript
-- Node.js and npm
-- Vite
-- Chart.js
-- date-fns
-
-## Prerequisites
-
-Node.js 22.12.0 or a newer compatible version and npm.
-
-## Installation
-
-Clone the repository and install dependencies:
+Requires Node.js 22.12.0 or newer and npm. From the project folder:
 
 ```bash
-git clone https://github.com/thenaijadev/expense_tracker.git
-cd expense_tracker
 npm ci
-```
-
-## Build, Test, and Run
-
-Start the application locally:
-
-```bash
 npm run dev
 ```
 
-Run automated tests:
+Open the local URL printed by Vite.
 
 ```bash
-npm test
+npm test          # Domain and storage regression tests
+npm run build    # Production bundle in dist/
+npm run preview  # Serve the production build locally
 ```
 
-Generate the production build:
+The committed lockfile keeps dependency installation reproducible. Vite's build configuration is in `vite.config.js`; package metadata and scripts are in `package.json`.
 
-```bash
-npm run build
-```
+## Features
 
-The production files are generated in the `dist/` directory.
+- Expense and income entries with categories, dates, and notes; edit, delete, and undo.
+- Monthly income, spending, balance, category breakdowns, and daily spending charts.
+- Monthly and category budgets with progress indicators.
+- Search, filter, and sort transactions; export the current results as CSV.
+- JSON backup and restore for transactions, currency, and budgets.
+- Optional sample-data mode that does not replace saved personal data.
+- Responsive desktop and mobile layouts with labelled forms and keyboard navigation.
 
-Preview the production build:
+## Data and privacy
 
-```bash
-npm run preview
-```
+Data stays in this browser's local storage. There is no account, server database, bank connection, or cross-device sync. Use JSON backups before clearing browser data or changing devices. A different browser, hostname, or port has separate storage.
 
-## Build Automation
+Existing entries under `expense-tracker-expenses` are loaded automatically; their original storage is retained. Updates use `expense-tracker-state-v2`. Invalid saved data triggers a visible warning and blocks ordinary writes instead of silently erasing it. A confirmed valid backup restore can replace unreadable data.
 
-The project uses **npm** and **Vite** to automate:
+All transactions use one selected currency (EUR, USD, GBP, NGN, CAD, or AUD). Changing currency changes its display label; it does not convert amounts. Amounts accept up to two decimal places and totals are calculated in integer cents. Backups are validated before saving; limits are 10,000 transactions and a 10 MB JSON file.
 
-- **Dependency management:** npm installs external libraries declared in `package.json`.
-- **Compilation/build processing:** Vite transforms and bundles JavaScript and CSS.
-- **Version management:** The project version is managed in `package.json`.
-- **Packaging:** Vite generates an optimized, deployable website in `dist/`.
+## Verification
 
-## Build Configuration
-
-- `package.json`: Project metadata, version, dependencies, and build scripts.
-- `package-lock.json`: Exact resolved dependency versions.
-- `vite.config.js`: Production build configuration.
-
-## Reproducibility
-
-The project uses a committed `package-lock.json` to support reproducible dependency installation.
-
-The build was verified from a fresh GitHub clone using:
-
-```bash
-npm ci
-npm test
-npm run build
-```
-
-All 3 tests passed, and the production build completed successfully.
-
-## Version
-
-**1.0.1**
-
-## Repository
-
-https://github.com/thenaijadev/expense_tracker
+`npm test` checks amount/date validation, exact totals, monthly boundaries, filters, editing, CSV escaping, migration, storage failures, and backup validation. It does not replace browser checks of layout and interaction.
