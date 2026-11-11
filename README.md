@@ -1,7 +1,7 @@
 # Expense Tracker
 
 A responsive personal finance app built with JavaScript, Vite, Chart.js, and date-fns.
-
+REPO: https://github.com/thenaijadev/expense_tracker
 ## Run locally
 
 Requires Node.js 22.12.0 or newer and npm. From the project folder:
